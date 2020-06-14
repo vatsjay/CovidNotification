@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Cronos" Version="0.7.0" />
+    <PackageReference Include="Lib.Net.Http.WebPush" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Notifications.Services.Abstractions\Notifications.Services.Abstractions.csproj" />
+    <ProjectReference Include="..\Notifications.Services.PushService\Notifications.Services.PushService.csproj" />
+    <ProjectReference Include="..\Notifications.Services.Sqlite\Notifications.Services.Sqlite.csproj" />
+    <ProjectReference Include="..\Notifications.Services\PushNotifications.Services.csproj" />
+  </ItemGroup>
+</Project>
