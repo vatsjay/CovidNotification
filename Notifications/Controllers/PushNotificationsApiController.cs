@@ -36,8 +36,8 @@ namespace Demo.AspNetCore.PushNotifications.Controllers
         [HttpPost("subscriptions")]
         public async Task<IActionResult> StoreSubscription([FromBody]DistrictSubscription subscription)
         {
-            try
-            {
+            try {
+            
 #if DEBUG
                 subscription.LatestConfirmedCase = 0;
 #else
