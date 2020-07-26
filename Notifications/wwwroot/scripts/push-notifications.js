@@ -8,7 +8,7 @@
     let topicInput, urgencySelect, notificationInput;
 
     function initializeConsole() {
-        districtName = document.getElementById('district');;
+        districtName = document.getElementById('district');
         consoleOutput = document.getElementById('output');
         document.getElementById('clear').addEventListener('click', clearConsole);
     }
