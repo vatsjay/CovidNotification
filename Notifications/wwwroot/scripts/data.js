@@ -55,6 +55,7 @@ window.onload = () => {
             });
             table.appendChild(tbody);
             appendChildElement = parentElement.appendChild(table)
+            openPopup();
         }
         else {
             parentElement.innerHTML = 'Server down'
@@ -85,12 +86,13 @@ window.onload = () => {
 };
 
 function getDist(event) {
+    document.getElementById('emptyState').style.display = 'none';
     const distSelect = document.getElementById('district');
     distSelect.style.display = 'block';
     const selectedState = event.target.value;
     const selectedDistData = retrievedDistData[selectedState] || '';
     const { districtData = {} } = selectedDistData;
-    distSelect.innerHTML = null; 
+    distSelect.innerHTML = null;
     Object.keys(districtData).map((item) => {
         let distOption = document.createElement('option');
         distOption.value = item;

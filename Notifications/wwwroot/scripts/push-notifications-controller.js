@@ -26,14 +26,20 @@
             });
         },
         storePushSubscription: function (pushSubscription, districtName) {
-            var subscription = pushSubscription.toJSON();
-            subscription["District"] = districtName;
+            if (districtName === '') {
+                document.getElementById('emptyState').style.display = 'block';
+            }
+            else {
+                document.getElementById('emptyState').style.display = 'none';
+                var subscription = pushSubscription.toJSON();
+                subscription["District"] = districtName;
 
-            return fetch('push-notifications-api/subscriptions', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(subscription)
-            });
+                return fetch('push-notifications-api/subscriptions', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(subscription)
+                });
+            }
         },
         discardPushSubscription: function (pushSubscription) {
             return fetch('push-notifications-api/subscriptions?endpoint=' + encodeURIComponent(pushSubscription.endpoint), {

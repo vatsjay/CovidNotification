@@ -14,6 +14,7 @@
     <div class="onloadPopup" id="statePopup">
         <div class="onloadPopup_content">
             <h1 class="onloadPopup_head">Select District to Subscribe</h1>
+            <p id="emptyState">Please Select State and District</p>
             <select id="state" onchange="getDist(event)" class="selectBox"></select>
             <select id="district" class="selectBox" style="display: none;"></select>
             <!-- <input type="text" id="district" size="32" maxlength="32" /> -->
@@ -42,6 +43,9 @@
         <label>Log:</label>
         <div id="output"></div>
         <button id="clear" style="position: relative; top: 3px;">Clear</button>
+    </div>
+    <div class="messgaeStrip" id="msgStrip">
+        <p id="msgText"></p>
     </div>
     <script src="scripts/push-notifications-controller.js"></script>
     <script src="scripts/push-notifications.js"></script>
